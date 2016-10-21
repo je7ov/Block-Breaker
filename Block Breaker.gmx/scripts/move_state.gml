@@ -55,5 +55,11 @@ if(!place_meeting(x, y + vspd, Solid)) {
         audio_play_sound(snd_bounce, 5, false);
     }
     vspd *= -1;
-    vspd += sign(vspd) * 0.02;
+    vspd += sign(vspd) * 0.02 * global.difficulty;
+}
+
+if(x < -16 || x > room_width + 16 || y < -16 || y > room_height + 16) {
+    instance_create(0, Paddle.y - 24, Ball);
+    global.life -= 1;
+    instance_destroy();
 }

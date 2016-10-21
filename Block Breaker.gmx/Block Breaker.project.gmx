@@ -19,16 +19,20 @@
     <sprites name="Level">
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_paused</sprite>
-      <sprite>sprites\spr_main_title</sprite>
+      <sprite>sprites\spr_main_title_brick</sprite>
+      <sprite>sprites\spr_main_title_breaker</sprite>
+      <sprite>sprites\spr_death</sprite>
+      <sprite>sprites\spr_game_over_start</sprite>
+      <sprite>sprites\spr_game_over_loop</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\spr_ball</sprite>
       <sprite>sprites\spr_paddle</sprite>
     </sprites>
     <sprites name="Cursor">
-      <sprite>sprites\spr_cursor_none</sprite>
       <sprite>sprites\spr_cursor</sprite>
       <sprite>sprites\spr_cursor_click</sprite>
+      <sprite>sprites\spr_cursor_none</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -42,16 +46,29 @@
     </scripts>
     <scripts name="Helper Scripts">
       <script>scripts\get_input.gml</script>
+      <script>scripts\start_game.gml</script>
+      <script>scripts\end_game.gml</script>
+      <script>scripts\generate_level.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_pirulen</font>
+    <font>fonts\font_pirulen_sm</font>
   </fonts>
   <objects name="objects">
     <objects name="Level">
+      <objects name="Menus">
+        <object>objects\MainMenu</object>
+        <object>objects\SettingsMenu</object>
+        <object>objects\GameOverMenu</object>
+      </objects>
       <object>objects\Global</object>
       <object>objects\Solid</object>
-      <object>objects\MainMenu</object>
+      <object>objects\GameOverTitle</object>
+      <object>objects\TitleBrick</object>
+      <object>objects\TitleBreaker</object>
+      <object>objects\LevelController</object>
+      <object>objects\Death</object>
       <object>objects\Wall</object>
     </objects>
     <objects name="Blocks">
@@ -69,8 +86,16 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_start</room>
-    <room>rooms\rm_zero</room>
+    <room>rooms\rm_main_menu</room>
+    <room>rooms\rm_settings</room>
+    <room>rooms\rm_game_over</room>
+    <room>rooms\rm_level_small</room>
+    <room>rooms\rm_level_med</room>
+    <room>rooms\rm_level_large</room>
+    <room>rooms\rm_level_one</room>
+    <room>rooms\rm_level_two</room>
+    <room>rooms\rm_level_four</room>
+    <room>rooms\rm_level_five</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
